@@ -19,6 +19,11 @@ const app = express();
 app.use(express.static('./public'));
 
 // TODO: (STRETCH) Write a new route that will handle a request and send the new.html file back to the user
+// Done estimated: 10 min, actual: 5min
+
+app.get('/new', function(req, res) {
+  res.sendFile('new.html', {root:'./public'});
+});
 
 
 app.post('/articles', bodyParser, function(request, response) {
